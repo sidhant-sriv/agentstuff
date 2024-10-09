@@ -87,6 +87,7 @@ def math_operations() -> list:
         tan,
     ]
 
+
 def return_math_operations() -> list:
     """Return the math functions."""
     return [FunctionTool.from_defaults(fn=func) for func in math_operations()]
