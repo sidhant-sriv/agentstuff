@@ -16,6 +16,6 @@ agent = ReActAgent.from_tools(
 )
 
 
-response = agent.chat("Count all mentions of Chavz.")
+response = agent.chat( "What is 10 times 14.")
 
 print(response)
