@@ -19,6 +19,7 @@ agent = CoAAgentPack(
     tools=[*return_math_operations(), journal_tool, *return_text_operations()], llm=llm
 )
 
-response = agent.run("How many times was 'Chavz' mentioned in the text?")
+
+response = agent.chat( "What is 10 times 14.")
 
 print(response)
