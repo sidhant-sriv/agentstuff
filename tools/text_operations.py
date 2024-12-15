@@ -1,9 +1,6 @@
 import re
 from llama_index.core.tools import FunctionTool
 
-
-
-
 def count_x_in_text(x: str, text: str) -> int:
     """Counts the number of times x appears in the text."""
     return text.lower().count(x.lower())

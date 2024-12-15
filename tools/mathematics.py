@@ -68,6 +68,14 @@ def tan(x: int) -> float:
     """Return the tangent of x."""
     return math.tan(x)
 
+#functions for greater than and less than
+def greater_than(x: int, y: int) -> bool:
+    """Return true if x is greater than y."""
+    return x > y
+
+def less_than(x: int, y: int) -> bool:
+    """Return true if x is less than y."""
+    return x < y
 
 def math_operations() -> list:
     """Perform multiple math operations."""
@@ -85,6 +93,8 @@ def math_operations() -> list:
         sin,
         cos,
         tan,
+        greater_than,
+        less_than
     ]
 
 

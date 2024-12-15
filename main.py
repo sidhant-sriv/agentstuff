@@ -8,14 +8,17 @@ load_dotenv()
 from llama_index.core.agent import ReActAgent
 from llama_index.llms.ollama import Ollama
 from llama_index.llms.gemini import Gemini
+from llama_index.packs.agents_coa import CoAAgentPack
 
-# llm = Ollama(model="llama3.1:8b-instruct-q8_0", request_timeout=120.0)
-llm = Gemini()
+llm = Ollama(model="llama3.1:8b-instruct-q8_0", request_timeout=120.0)
+# llm = Gemini()
 agent = ReActAgent.from_tools(
     [*return_math_operations(), journal_tool, *return_text_operations()], llm=llm, verbose=True, max_iterations=12
 )
+agent = CoAAgentPack(
+    tools=[*return_math_operations(), journal_tool, *return_text_operations()], llm=llm
+)
 
-
-response = agent.chat("Count all mentions of Chavz.")
+response = agent.run("How many times was 'Chavz' mentioned in the text?")
 
 print(response)
